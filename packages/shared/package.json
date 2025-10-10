@@ -1,0 +1,7 @@
+{
+  "name": "@shared",
+  "version": "0.1.0",
+  "main": "src/models.ts",
+  "types": "src/models.ts",
+  "license": "MIT"
+}

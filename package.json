@@ -1,0 +1,29 @@
+{
+  "name": "3dquote-monorepo",
+  "private": true,
+  "packageManager": "pnpm@9.0.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo build",
+    "build:web": "pnpm --filter @apps/desktop-web build",
+    "build:mobile": "cd apps/mobile && npx expo export --platform all",
+    "dev": "turbo dev",
+    "dev:mobile": "pnpm --filter @apps/mobile dev",
+    "dev:desktop": "pnpm --filter @apps/desktop-web dev",
+    "test": "turbo test",
+    "test:pricing": "pnpm --filter @pricing test",
+    "type-check": "turbo type-check",
+    "lint": "turbo lint",
+    "clean": "turbo clean && rm -rf node_modules",
+    "prepare": "husky install || true"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "turbo": "^2.5.8",
+    "typescript": "^5.9.3",
+    "zod": "^3.25.76"
+  }
+}
